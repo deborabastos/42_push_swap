@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/05/17 14:58:15 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/07/05 14:38:15 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: <stdio.h>
+** DESCRIPTION:
+**		The ft_putchar()  writes the string s to stream, without its terminating 
+**	null byte.
 */
 
-typedef struct s_struct
+void	ft_putchar(char c)
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
-
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	write(1, &c, 1);
+}

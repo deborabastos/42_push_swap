@@ -6,13 +6,17 @@
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:03:47 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/14 15:13:53 by dalves-p         ###   ########.fr       */
+/*   Updated: 2022/02/17 21:57:49 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+
 int	main(int argc, char *argv[])
 {
+	t_struct	psw;
+
+	init(argc, argv, &psw);
 	return (0);
 }

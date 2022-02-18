@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/06/25 22:36:43 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/08/19 11:03:24 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: <ctype.h>
+** DESCRIPTION:
+** 		The isspace() function tests for white-space characters. That is:
+**	form-feed ('\f'), newline ('\n'), carriage return ('\r'), horizontal tab 
+**	('\t'), and vertical tab ('\v').
 */
 
-typedef struct s_struct
+int	ft_isspace(int c)
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
-
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	if ((c == ' ' || c == '\r' || c == '\n' || c == '\f' || c == '\v'
+			|| c == '\t'))
+		return (1);
+	return (0);
+}

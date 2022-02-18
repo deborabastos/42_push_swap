@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isnegative.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/06/29 16:24:17 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/06/29 16:26:04 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_isnegative() function checks if a number is negative.
 */
 
-typedef struct s_struct
+int	ft_isnegative(int n)
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
-
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	if (n < 0)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}

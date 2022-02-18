@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   check_order.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2022/02/16 15:54:06 by dalves-p          #+#    #+#             */
+/*   Updated: 2022/02/16 16:59:03 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
-
-/*
-** STRUCT
-*/
-
-typedef struct s_struct
-{
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
-
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+// void a_is_sorted(char *argv[])
+// {
+	
+// }

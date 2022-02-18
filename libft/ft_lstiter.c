@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/06/07 17:17:12 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/06/28 14:28:48 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_lstiter() function iterates the list ’lst’ and applies the 
+**	function ’f’ to the content of each element.
 */
 
-typedef struct s_struct
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
-
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	if (!lst || !f)
+		return ;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}

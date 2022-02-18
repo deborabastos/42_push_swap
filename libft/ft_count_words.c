@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/08/20 22:15:17 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/08/20 22:15:50 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_count_words() counts how many words has a string.
 */
 
-typedef struct s_struct
+size_t	ft_count_words(char const *s, char c)
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
+	size_t	words;
 
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	words = 0;
+	if (*s != c && *s)
+	{
+		s++;
+		words++;
+	}
+	while (*s != '\0')
+	{
+		while (*s == c && *(s + 1) != '\0')
+		{
+			s++;
+			if (*s != c)
+				words++;
+		}
+		s++;
+	}
+	return (words);
+}

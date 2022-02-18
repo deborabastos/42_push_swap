@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_factorial.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/04/15 16:51:52 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/06/29 18:42:21 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_factorial() function returns the result of a factorial operation 
+**	based on the number given as a parameter. If the argument is not valid, it 
+**	returns 0.
 */
 
-typedef struct s_struct
+int	ft_factorial(int nb)
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
+	int	result;
 
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	if (nb < 0)
+		return (0);
+	else if (nb <= 1)
+		return (1);
+	else
+		result = nb * ft_factorial(nb - 1);
+	return (result);
+}

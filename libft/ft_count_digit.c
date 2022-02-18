@@ -1,38 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_count_digit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/07/05 18:24:49 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/10/28 14:50:27 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: N/A
+** DESCRIPTION:
+**		The ft_count_digit() counts how many digits has the integer.
 */
 
-typedef struct s_struct
+size_t	ft_count_digit(long long int n)
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
+	size_t	c;
 
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	if (n == 0)
+		return (1);
+	c = 0;
+	if (n < -9223372036854775807)
+	{
+		c++;
+		n = n / 10;
+	}
+	if (n < 0)
+	{
+		n = -n;
+		c++;
+	}
+	while (n > 0)
+	{
+		n = n / 10;
+		c++;
+	}
+	return (c);
+}

@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalves-p <dalves-p@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:04:07 by dalves-p          #+#    #+#             */
-/*   Updated: 2022/02/17 22:10:23 by dalves-p         ###   ########.fr       */
+/*   Created: 2021/05/17 12:15:43 by dalves-p          #+#    #+#             */
+/*   Updated: 2021/07/12 17:08:54 by dalves-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h> // TIRAR
-# include "./libft/libft.h"
+#include "libft.h"
 
 /*
-** STRUCT
+** LIBRARY: <strings.h>
+** DESCRIPTION:
+**		The strlen() function calculates the length of the string pointed to by 
+**	s, excluding the terminating null byte ('\0').
+**		It returns the number of bytes in the string pointed to by s.
 */
 
-typedef struct s_struct
+size_t	ft_strlen(const char *s)
 {
-	int		argc;
-	int		count_int;
-	int		**list;
-}	t_struct;
+	size_t	c;
 
-/*
-** FUNCTIONS PROTOTYPE
-*/
-
-void init(int argc, char *argv[], t_struct *psw);
-
-#endif
+	c = 0;
+	if (!s)
+		return (0);
+	while (s[c] != '\0')
+		c++;
+	return (c);
+}
